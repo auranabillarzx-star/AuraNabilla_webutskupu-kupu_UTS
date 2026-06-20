@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kupu Kupu - Dunia Keindahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ 
+
+
+    <!-- link bootstrap, Bootstrap = “alat siap pakai untuk desain website”-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+
+<!--link yang menghubungkan dengan css dan js eksternal-->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+
+
+<body>
+
+<!-- NAV -->
+   <!--bagian paling atas website yang berisi menu menu dan logo-->
+<header class="header-section">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <!--Logo + nama website-->
+         <div class="logo-brand">
+        <!-- Container untuk logo visual dan teks brand -->
+        <div class="logo">
+          <!-- Link dengan gambar logo, href="#" untuk kembali ke atas -->
+          <a href="kupu-kupu.html"><img src="logo.png" alt="Logo Kupu Kupu" /></a>
+          <span class="brand-name">kupu kupu</span>
+        </div>
+      </div>
+      
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#kliksaya"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="kliksaya">
+      
+        <ul class="navbar-nav ms-auto nav-links">
+          <li><a href="kupu-kupu.html" class="active">Home</a></li>
+          <li><a href="siklus.html">Siklus</a></li>
+          <li><a href="habitat.html">Habitat</a></li>
+          <li><a href="langka.html">Langka</a></li>
+          <li><a href="tercantik.html">Tercantik</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        </ul>
+      
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<!-- HERO -->
+ <!--Ini bagian paling besar pertama yang dilihat user-->
+<section id="hero"> 
+  <div class="fade-up">
+  <h1 class="hero-title">Selamat Datang di Dunia Kupu Kupu</h1>
+  <p class="hero-sub">Kupu kupu adalah simbol keindahan transformasi dan kebebasan yang menginspirasi</p>
+  <div class="hero-btns">
+    <a href="#langka" class="btn-primary">Jelajahi Sekarang</a>
+  </div>
+  </div>
+</section>
+
+<!-- FEATURES: Siklus & Habitat -->
+<section id="features">
+   <div class="fade-up">
+  <div class="features-grid">
+    <div class="feature-card">
+      <img src="https://p4.wallpaperbetter.com/wallpaper/815/260/53/butterfly-cgi-clouds-cocoon-wallpaper-preview.jpg" alt="Siklus Hidup Kupu-Kupu" />
+      <div class="feature-overlay">
+        <button
+  class="feature-btn"
+  onclick="openModal(this)"
+  data-title="Siklus Hidup Kupu-Kupu"
+  data-img="https://p4.wallpaperbetter.com/wallpaper/815/260/53/butterfly-cgi-clouds-cocoon-wallpaper-preview.jpg"
+  data-desc="Kupu-kupu mengalami metamorfosis sempurna melalui empat tahap: telur, larva (ulat), pupa (kepompong), dan imago (kupu-kupu dewasa).">
+  Siklus
+</button> <!--ini dipakai untuk modal popup-->
+<!--ini mengirim data ke JavaScript-->
+      </div>
+    </div>
+
+
+    <div class="feature-card">
+      <img src="https://png.pngtree.com/background/20250416/original/pngtree-beautiful-flower-garden-with-butterflies-picture-image_16448878.jpg" alt="Habitat Kupu-Kupu" />
+      <div class="feature-overlay">
+       <button
+  class="feature-btn"
+  onclick="openModal(this)"
+  data-title="Habitat Kupu-Kupu"
+  data-img="https://png.pngtree.com/background/20250416/original/pngtree-beautiful-flower-garden-with-butterflies-picture-image_16448878.jpg"
+  data-desc="Kupu-kupu hidup di berbagai habitat mulai dari hutan tropis, padang rumput, pegunungan, hingga taman kota.">
+  Habitat
+</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- LANGKA -->
+<section id="langka" class="butterfly-section">
+
+
+    <div class="section-header"><h2>Langka</h2></div>
+
+ <div class="fade-up">
+    <div class="butterfly-grid">
+
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://img.magnific.com/premium-photo/queen-alexandra-s-birdwing-butterfly-ornithoptera-alexandrae-posed-branch_116079-70.jpg?w=2000" alt="Ornithoptera alexandrae" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Ornithoptera alexandrae</p>
+          
+    <button
+      class="btn-detail"
+      onclick="openModal(this)"
+      data-title="Ornithoptera alexandrae"
+      data-img="https://img.magnific.com/premium-photo/queen-alexandra-s-birdwing-butterfly-ornithoptera-alexandrae-posed-branch_116079-70.jpg?w=2000"
+      data-desc="Ornithoptera alexandrae  adalah spesies kupu-kupu terbesar di dunia yang endemik di hutan hujan dataran rendah Provinsi Oro, Papua Nugini. Kupu-kupu betina memiliki tubuh yang lebih besar dengan rentang sayap mencapai 30 cm dan sayap berwarna cokelat dengan corak segitiga berwarna krem, putih, atau kuning. Kupu-kupu jantan memiliki rentang sayap sekitar 20 cm dan menampilkan perpaduan warna hijau neon dan biru zamrud yang memukau">
+      Detail
+    </button>
+    
+        </div>
+      </div>
+
+
+      <div class="butterfly-card">
+
+
+        <div class="img-wrap">
+          <img src="http://vnredlist.vast.vn/wp-content/uploads/nhom-con-trung/images/CT26_Buom-phuong-canh-chim-cham-roi-Troides-aeacus-con-duc-Anh-Hoang-Vu-Tru-768x576.jpg" alt="Troides helena" />
+        </div>
+
+        <div class="card-body">
+
+          <p class="card-name">Troides helena</p>
+          
+    <button
+      class="btn-detail"
+      onclick="openModal(this)"
+      data-title="Troides helena"
+      data-img="http://vnredlist.vast.vn/wp-content/uploads/nhom-con-trung/images/CT26_Buom-phuong-canh-chim-cham-roi-Troides-aeacus-con-duc-Anh-Hoang-Vu-Tru-768x576.jpg"
+      data-desc=" adalah spesies kupu-kupu berukuran besar dan eksotis yang memiliki sayap dominan hitam dengan corak kuning keemasan yang mencolok.  Memiliki bentang sayap yang lebar, berkisar antara 13 cm hingga 17 cm. Kupu-kupu betina umumnya berukuran sedikit lebih besar dan berat dibandingkan jantan. Satwa dilindungi ini umumnya hidup dan berkembang biak di kawasan hutan tropis dataran rendah">
+      Detail
+    </button>
+    
+        </div>
+      </div>
+
+
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE1-a3_whDuubA2aKMo_CSx_ZjmTmPZZVgCfUDODSAVb1u5L-2ahOnNDq78Zx2jAlHu_38AIA_FknMfngbHnS8x4u9uHtOfYBu3Obmnw_lbFUXqae3trGHY-dWXyFyb7IbKCpkw7w93yivtUjOfLrdvSfzrZ1RLPfrlAIKEla3ktKzEtd6IkrEaEJL9Id-/s16000/Graphium_agamemnon.jpg" alt="Graphium agamemnon" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Graphium agamemnon</p>
+         
+    <button
+      class="btn-detail"
+      onclick="openModal(this)"
+      data-title="Graphium agamemnon"
+      data-img="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE1-a3_whDuubA2aKMo_CSx_ZjmTmPZZVgCfUDODSAVb1u5L-2ahOnNDq78Zx2jAlHu_38AIA_FknMfngbHnS8x4u9uHtOfYBu3Obmnw_lbFUXqae3trGHY-dWXyFyb7IbKCpkw7w93yivtUjOfLrdvSfzrZ1RLPfrlAIKEla3ktKzEtd6IkrEaEJL9Id-/s16000/Graphium_agamemnon.jpg"
+      data-desc="Graphium agamemnon (dikenal sebagai Tailed Jay atau Segitiga Berbintik Hijau) adalah kupu-kupu tropis dari keluarga Papilionidae. Spesies ini bercirikan sayap berwarna dasar hitam kecokelatan dengan taburan bintik-bintik hijau zamrud yang mencolok. dengan rentang sayap sekitar 85 mm hingga 90 mm. Habitat utamanya meliputi hutan hujan tropis hingga area terbuka seperti kebun dan pekarangan.">
+      Detail
+    </button>
+        </div>
+      </div>
+
+
+      
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://wingscales.com/media/1024/54/129-1-54ca9.webp" alt="Cethosia cyane" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Cethosia cyane</p>
+        
+    <button
+      class="btn-detail"
+      onclick="openModal(this)"
+      data-title="Cethosia cyane"
+      data-img="https://wingscales.com/media/1024/54/129-1-54ca9.webp"
+      data-desc="Cethosia cyane, atau dikenal sebagai Leopard Lacewing, adalah spesies kupu-kupu tropis dari famili Nymphalidae. Spesies ini dicirikan oleh corak sayap bagian bawah yang menyerupai tutul macan tutul dan sayap atas berwarna gelap. Permukaan sayap atas jantan memiliki warna yang lebih terang dan menyala dibandingkan betina yang cenderung gelap. Ciri paling khas terdapat pada sayap bagian bawah yang dihiasi pola totol-totol hitam seperti macan tutul dengan kombinasi warna oranye, hitam, dan putih. Memiliki rentang sayap antara 60 mm - 80 mm. Habitat utamanya meliputi tepi hutan, area terbuka, hingga taman kota di wilayah dataran rendah hingga ketinggian 1200 meter">
+      Detail
+    </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TERCANTIK -->
+<section id="tercantik" class="butterfly-section">
+
+
+
+    <div class="section-header"><h2>Tercantik</h2></div>
+
+    
+ <div class="fade-up">
+    <div class="butterfly-grid">
+ 
+
+      <div class="butterfly-card">
+        
+        <div class="img-wrap">
+
+          <img src="https://th.bing.com/th/id/OIP.PNwkJ4P7yyEiHMb7VNZlsQHaEV?w=316&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Morpho menelaus" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Morpho menelaus</p>
+          <button
+            class="btn-detail"
+            onclick="openModal(this)"
+            data-title="Morpho menelaus"
+            data-img="https://th.bing.com/th/id/OIP.PNwkJ4P7yyEiHMb7VNZlsQHaEV?w=316&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+            data-desc="Kupu-kupu Morpho menelaus adalah spesies kupu-kupu tropis besar dari Amerika Tengah dan Selatan. Terkenal dengan sayap Berwarna biru cerah, metalik, dan berkilauan yang dikelilingi oleh tepi sayap berwarna hitam. Warna biru ini tidak berasal dari pigmen, melainkan dari pembiasan cahaya pada sisik sayapnya, dan bagian bawah sayapnya berwarna cokelat dan dihiasi dengan pola bercak mata (eyespot) yang berfungsi sebagai kamuflase dan mekanisme pertahanan dari pemangsa. Memiliki rentang sayap yang lebar, rata-rata mencapai sekitar 12 cm. spesies ini menghuni hutan hujan tropis, menghabiskan sebagian besar waktunya di kanopi bawah dan lantai hutan">
+            Detail
+          </button>
+        </div>
+      </div>
+
+
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://static.inaturalist.org/photos/136983450/large.jpeg" alt="Papilio blumei" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Papilio blumei</p>
+          <button
+            class="btn-detail"
+            onclick="openModal(this)"
+            data-title="Papilio blumei"
+            data-img="https://static.inaturalist.org/photos/136983450/large.jpeg"
+            data-desc="Papilio blumei (Kupu-kupu Merak Hijau) adalah spesies kupu-kupu ekor layang endemik Sulawesi. Dikenal karena sayapnya yang memukau, spesies ini memiliki bentang sayap hingga 12 cm dan menampilkan pita hijau zamrud serta biru yang berkilau di atas dasar sayap hitam pekat. Ekornya yang anggun melebar di bagian ujung.">
+            Detail
+          </button>
+        </div>
+      </div>
+
+
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://media.istockphoto.com/id/912910788/id/foto/kupu-kupu-besar-yang-indah-ngengat-atlas-raksasa-attacus-atlas-serangga-di-habitat-alam-hijau.jpg?s=170667a&w=0&k=20&c=Q5gu9wCri0sWMqXCdsaPbhx18DLM02V0_5Md1HgIFaI=" alt="Attacus atlas" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Attacus atlas</p>
+          <button
+            class="btn-detail"
+            onclick="openModal(this)"
+            data-title="Attacus atlas"
+            data-img="https://media.istockphoto.com/id/912910788/id/foto/kupu-kupu-besar-yang-indah-ngengat-atlas-raksasa-attacus-atlas-serangga-di-habitat-alam-hijau.jpg?s=170667a&w=0&k=20&c=Q5gu9wCri0sWMqXCdsaPbhx18DLM02V0_5Md1HgIFaI="
+            data-desc="Attacus atlas (dikenal sebagai ngengat Atlas atau kupu-kupu gajah) adalah salah satu jenis ngengat terbesar di dunia. spesies ini terkenal karena bentangan sayapnya yang sangat lebar,  Lebar sayap ngengat ini dapat mencapai 25 hingga 30 cm, menjadikannya salah satu serangga terbesar berdasarkan luas permukaan sayap. Sayapnya memiliki pola rumit berwarna dasar cokelat kemerahan, merah muda, dan hitam. Terdapat corak transparan seperti jendela berbentuk segitiga di setiap sayapnya. Endemik di kawasan hutan tropis dan subtropis Asia, termasuk India, Tiongkok, Asia Tenggara, dan Kepulauan Nusantara seperti Indonesia.">
+            Detail
+          </button>
+        </div>
+      </div>
+
+
+
+      <div class="butterfly-card">
+        <div class="img-wrap">
+          <img src="https://kupukupu.lt/wp-content/uploads/2021/05/idea_leuconoe_drugelis-1.jpeg" alt="Idea leuconoe" />
+        </div>
+        <div class="card-body">
+          <p class="card-name">Idea leuconoe</p>
+          <button
+            class="btn-detail"
+            onclick="openModal(this)"
+            data-title="Idea leuconoe"
+            data-img="https://kupukupu.lt/wp-content/uploads/2021/05/idea_leuconoe_drugelis-1.jpeg"
+            data-desc="Idea leuconoe, yang dikenal dengan nama Kupu-kupu Kertas Beras atau Layang-layang Kertas. Spesies ini terkenal dengan pola sayap hitam-putihnya yang elegan,  Sayapnya berwarna putih tembus cahaya dengan pola jaring-jaring atau corak bintik berwarna hitam pekat di sepanjang urat sayap. memiliki rentang sayap 12 hingga 14 cm. Kupu-kupu ini sangat populer di berbagai pameran hidup. Umumnya ditemukan di hutan hujan dataran rendah dan kawasan hutan bakau (mangrove) pesisir di ketinggian hingga 400 meter di atas permukaan laut. ">
+            Detail
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Dunia Kupu Kupu · Belajar pemograman web</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <img id="modal-img" class="modal-img" src="" alt="" />
+    <h3 id="modal-title" class="modal-title"></h3>
+    <p id="modal-desc" class="modal-desc"></p>
+  </div>
+</div>
+
+</body>
+</html>
+
+

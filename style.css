@@ -1,0 +1,550 @@
+/* ── PALETTE ────────────────────────────────────────────
+       --blue-deep   #0A1628   navbar / hero gradient base
+       --blue-mid    #1A3A6B   section bg, cards
+       --blue-bright #1E7FD8   buttons, accents, highlights
+       --blue-sky    #A8D4F5   text tints, borders, soft glow
+    ──────────────────────────────────────────────────────── */
+:root {
+  --blue-deep: #0a1628;
+  --blue-dark: #143d7a;
+  --blue-mid: #1a3a6b;
+  --blue-bright: #1e7fd8;
+  --blue-sky: #a8d4f5;
+  --white: #ffffff;
+  --off-white: #eef5fc;
+  --text-muted: #8bb8e0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*“Body menentukan tampilan dasar website seperti font, warna background, dan warna teks.”*/
+body {
+  font-family: "Inter", sans-serif; /*font utama website
+ */
+  background: var(--off-white); /* warna latar belakan*/
+  color: var(--blue-deep); /*warna teks*/
+  overflow-x: hidden;
+}
+
+/* ── HEADER SECTION ── */
+/*
+Header akan tetap berada di atas ketika halaman discroll.
+*/
+header.header-section {
+  position: sticky; /* Membuat header menempel saat scroll */
+  top: 0; /* Posisi menempel di bagian atas */
+  z-index: 100; /* Agar selalu berada di atas elemen lain */
+  box-shadow: 0 2px 16px rgba(13, 43, 110, 0.4); /* Menambahkan bayangan */
+}
+
+/* ── NAV ── */
+nav,
+nav.navbar {
+  display: flex; /*susunan horizontal*/
+  justify-content: space-between; /* Memberi jarak maksimal antar item , logo kiri, menu kanan*/
+}
+
+/*
+Container logo dan nama website.
+*/
+.logo-brand {
+  display: flex;
+  gap: 1rem; /* Jarak antara logo dan teks */
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Jarak antara gambar dan tulisan */
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--blue-light);
+  letter-spacing: 0.04em;
+}
+
+/*
+Link yang membungkus logo.
+*/
+
+.logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/*Gambar logo.*/
+.logo img {
+  height: 80px; /* Tinggi logo */
+  width: auto; /* Lebar otomatis mengikuti proporsi */
+  object-fit: contain; /* Menjaga gambar tidak terdistorsi */
+}
+
+.nav-links {
+  display: flex; /* Menampilkan menu secara horizontal */
+  gap: 0.25rem; /* Jarak antar menu */
+  list-style: none; /* Menghilangkan bullet list */
+}
+
+.nav-links li a {
+  text-decoration: none; /*hapus garis bawah link*/
+  color: rgba(255, 255, 255, 0.75); /*warna */
+  font-weight: 600; /*ketebalan font nya*/
+  font-size: 1rem; /*ukuran font nya*/
+  padding: 1rem 0.9rem; /*memberi jarak atas bawah dan kiri kanan di background nav*/
+  border-radius: 8px; /*membuat sudut menjadi lengkung*/
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+/*Kode ini membuat link navigasi berubah warna saat ada kursor di atas nav latar jadi biru gelap, teks jadi putih, dengan animasi smooth 0.2s.*/
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 50vh;
+  background: linear-gradient(
+    160deg,
+    var(--blue-deep) 0%,
+    var(--blue-mid) 40%,
+    var(--blue-bright) 80%
+  ); /*background gradasi biru*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Semua konten di dalam hero akan tepat di tengah (vertikal & horizontal)*/
+  text-align: center; /*teks nya berada tepat di tengah*/
+  padding: 120px 24px 80px; /*Jarak di dalam elemen - Atas: 120px (untuk navbar yang sticky) - Kiri/Kanan: 24px - Bawah: 80px */
+  position: relative; /*Posisi relatif terhadap posisi asli (untuk elemen child absolute)*/
+  overflow: hidden; /**/
+}
+
+#hero::after {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 212, 245, 0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(
+    2.4rem,
+    6vw,
+    5rem
+  ); /*Ukuran font besar & otomatis menyesuaikan layar: - Minimum: 2.4rem (sekitar 38px) - Di layar normal: disesuaikan dengan lebar layar (6vw) - Maksimum: 5rem (sekitar 80px)*/
+  font-weight: 900; /*Font sangat tebal (bold banget)*/
+  line-height: 1.1; /*Jarak antar garis teks rapat (hanya 1.1 kali ukuran font)*/
+  color: var(--white);
+  margin-bottom: 24px; /*Ada jarak 24px di bawah judul (untuk teks di bawahnya)*/
+  max-width: 780px; /*maksimal besar judul*/
+  margin-left: auto; /*Judul tepat di tengah (center)*/
+  margin-right: auto;
+}
+
+.hero-sub {
+  font-size: 14px; /*Tulisan menjadi lebih besar.*/
+  letter-spacing: 2px; /*Mengatur jarak antar huruf..*/
+  text-transform: uppercase; /*Mengubah semua huruf menjadi huruf kapital.*/
+  color: var(--text-muted);
+  max-width: 600px; /*Membatasi lebar maksimal teks.*/
+  margin: 0 auto 48px; /*Mengatur jarak luar elemen.*/
+  text-align: center; /*Membuat isi teks rata tengah.*/
+  line-height: 1.8; /*Mengatur jarak antar baris.*/
+}
+
+.hero-btns {
+  display: flex; /*berada di tengah dah midah di atur */
+  justify-content: center; /*semua element berada di tengah*/
+}
+
+.btn-primary {
+  background: var(--blue-bright);
+  color: var(--white);
+  border: none; /*Menghilangkan garis tepi bawaan tombol.*/
+  padding: 14px 36px; /*Padding digunakan untuk memberi ruang di dalam tombol sehingga tampil lebih besar dan mudah diklik.*/
+  border-radius: 6px; /*Membuat sudut tombol menjadi sedikit melengkung.*/
+  font-size: 14px; /*Mengatur ukuran tulisan.*/
+  font-weight: 600; /*Membuat tulisan lebih tebal.*/
+  cursor: pointer; /*Mengubah bentuk kursor menjadi tangan saat diarahkan ke tombol.*/
+  letter-spacing: 0.5px; /*Menambah jarak antar huruf.*/
+  transition: /*Memberikan efek animasi saat terjadi perubahan.*/
+    background 0.2s,
+    transform 0.15s;
+  text-decoration: none; /*Menghilangkan garis bawah pada link.*/
+}
+.btn-primary:hover {
+  background: #2890ef; /*Mengubah warna tombol menjadi biru yang lebih terang saat disentuh mouse.*/
+  transform: translateY(
+    -1px
+  ); /*"Transform translateY(-1px) membuat tombol bergerak sedikit ke atas saat disentuh mouse sehingga terasa lebih interaktif."*/
+}
+
+/* ── FEATURE CARDS (Siklus / Habitat) ── */
+#features {
+  padding: 96px 48px; /*mengatur jarak atas dan bawah dari isi featur*/
+  background: var(--off-white);
+}
+
+.features-grid {
+  display: grid; /*mengatur card menjadi sejajar*/
+  grid-template-columns: 1fr 1fr; /*Membuat 2 kolom dengan ukuran sama besar.*/
+  gap: 24px; /*jarak antar card*/
+  max-width: 1100px; /*Lebar maksimal grid adalah 1100px.Jika layar lebih besar, grid tidak ikut melebar terus.*/
+  margin: 0 auto; /*Membuat grid berada tepat di tengah halaman.*/
+}
+.feature-card {
+  position: relative; /*Menjadikan kartu sebagai acuan posisi elemen lain.*/
+  border-radius: 16px; /*membuat sudut menjadi lengkung*/
+  overflow: hidden; /*Menyembunyikan bagian gambar yang keluar dari kartu.*/
+  aspect-ratio: 4/3; /*Menentukan perbandingan ukuran.lebar dan tinggi*/
+  cursor: pointer;
+}
+
+.feature-card img {
+  width: 100%; /*Lebar gambar mengikuti kartu*/
+  height: 100%; /*Tinggi gambar mengikuti kartu.*/
+  object-fit: cover; /*Gambar memenuhi seluruh area tanpa terlihat gepeng.*/
+  transition: transform 0.5s ease; /*Saat gambar berubah ukuran, animasinya halus.*/
+}
+.feature-card:hover img {
+  transform: scale(1.06); /*Memperbesar gambar saat mouse diarahkan ke kartu.*/
+}
+.feature-overlay {
+  /*Membuat lapisan gelap di atas gambar.Tujuannya agar tombol terlihat jelas.*/
+  position: absolute; /*Menempel di atas gambar.*/
+  inset: 0; /*Artinya overlay memenuhi seluruh kartu.*/
+  background: linear-gradient(
+    /*membuat gradasi warna dan transparan*/ to top,
+    rgba(10, 22, 40, 0.85) 0%,
+    transparent 60%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 32px;
+}
+
+.feature-btn {
+  background: var(--blue-bright);
+  color: var(--white);
+  border: none; /*Menghilangkan garis tepi tombol.*/
+  padding: 12px 48px; /*Ukuran ruang di dalam tombol. atas bawah dan kiri kanan*/
+  border-radius: 6px; /*Sudut tombol sedikit membulat.*/
+  font-size: 14px; /*Ukuran tulisan 14px.*/
+  font-weight: 600; /*Tulisan agak tebal.*/
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.feature-btn:hover {
+  background: #2890ef; /*Mengubah warna tombol saat disentuh mouse.*/
+}
+
+/* ── SECTION HEADER ── */
+/*Mengatur judul section (misalnya: Langka, Tercantik, Habitat) supaya tampil rapi dan sejajar dengan garis kecil di sampingnya.*/
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+/*Membuat garis vertikal kecil di sebelah judul.*/
+.section-header::before {
+  content: "";
+  display: block; /*Membuat elemen ini berbentuk kotak/blok.*/
+  width: 5px; /*Lebar garis kecil (tipis).*/
+  height: 32px; /*tinggi garis*/
+  border-radius: 3px; /*sudut lengkung*/
+  background: var(--blue-bright);
+  flex-shrink: 0; /*Mencegah garis menyusut saat layar kecil.*/
+}
+.section-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700; /*ketebalan*/
+  color: var(--blue-deep);
+}
+
+/* ── BUTTERFLY GRID (Langka / Tercantik) ── */
+.butterfly-section {
+  padding: 80px 48px; /*jarak atas bawah dan kiri kanan section*/
+  justify-content: center; /* tengah vertikal */
+  align-items: center; /* tengah horizontal */
+  text-align: center;
+}
+
+.butterfly-section:nth-child(odd) {
+  /*Memilih section kupu-kupu yang berada di urutan ganjil (1, 3, 5, dst). berwarna lebih terang*/
+  background: var(--off-white);
+}
+.butterfly-section:nth-child(even) {
+  /*Memilih section yang berada di urutan genap (2, 4, 6, dst). berwarna gradasi*/
+  background: linear-gradient(135deg, #e8f4fd 0%, #d0e9f8 100%);
+}
+
+.butterfly-grid {
+  display: grid; /*sejajar horizontal*/
+  grid-template-columns: repeat(4, 1fr); /*card sejajar ke kiri dengan 4 card*/
+  gap: 30px; /*jarak antar card*/
+}
+
+.habitat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.butterfly-card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(10, 22, 40, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.butterfly-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(30, 126, 216, 0.486);
+}
+
+.butterfly-card .img-wrap {
+  width: 100%; /*Membuat wadah gambar memenuhi lebar card.*/
+  aspect-ratio: 1; /*Menentukan perbandingan lebar dan tinggi.*/
+  overflow: hidden; /*Menyembunyikan bagian gambar yang keluar dari kotak.*/
+  background: #d0e9f8;
+}
+.butterfly-card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*Membuat wadah gambar memenuhi lebar card.dan bagian yang tidak muat akan dipotong.*/
+  transition: transform 0.4s; /*Membuat animasi zoom berjalan halus.*/
+}
+.butterfly-card:hover .img-wrap img {
+  transform: scale(1.08); /*Saat mouse berada di atas card, gambar diperbesar.*/
+}
+.butterfly-card .card-body {
+  padding: 14px 16px 16px; /*Memberikan ruang kosong di dalam card-body.*/
+  text-align: center;
+}
+.butterfly-card .card-name {
+  font-size: 13px;
+  font-style: italic; /*tulisan miring*/
+  color: var(--blue-deep);
+  font-weight: 500;
+  margin-bottom: 12px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-detail {
+  display: inline-block; /*Membuat tombol bisa memiliki ukuran (width, height, padding) tetapi tetap berada sejajar dengan elemen lain.*/
+  border: 1.5px solid var(--blue-bright); /*Border digunakan untuk membuat garis tepi agar tombol terlihat jelas.*/
+  color: var(--blue-bright);
+  background: transparent;
+  padding: 7px 28px; /*Memberi ruang di dalam tombol.*/
+  border-radius: 6px; /*lengkung sudut*/
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  text-decoration: none;
+}
+.btn-detail:hover {
+  background: var(--blue-bright);
+  color: var(--white);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--blue-deep);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+}
+
+/* ── MODAL ── */
+.modal-overlay {
+  display: none; /*Menyembunyikan modal saat halaman pertama kali dibuka.*/
+  position: fixed; /*Position fixed membuat modal selalu berada di atas layar dan tidak ikut bergeser saat halaman discroll.*/
+  inset: 0; /*Inset 0 membuat overlay memenuhi seluruh layar dari atas, bawah, kiri, dan kanan.*/
+  background: rgba(
+    10,
+    22,
+    40,
+    0.85
+  ); /*Memberi warna gelap transparan pada layar.Latar belakang menjadi gelap tetapi halaman masih sedikit terlihathingga fokus pengguna tertuju pada modal.*/
+  z-index: 200; /*Z-index digunakan agar modal muncul di lapisan paling depan.*/
+  align-items: center; /*membuat modal berada di tengah layar secara vertikal.*/
+  justify-content: center;
+  backdrop-filter: blur(
+    4px
+  ); /*Memberi efek blur pada halaman di belakang modal.*/
+}
+.modal-overlay.open {
+  display: flex; /*Class open digunakan untuk mengubah modal dari tersembunyi menjadi tampil. yang di ambil dari java script*/
+}
+.modal-box {
+  background: var(--white);
+  border-radius: 18px; /*lengkung*/
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute; /*Digunakan untuk menempatkan tombol pada posisi tertentu di dalam modal.*/
+  top: 16px; /*Memberi jarak 16 piksel dari bagian atas modal.*/
+  right: 20px; /*Memberi jarak 20 piksel dari sisi kanan modal.*/
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+}
+
+/*Saat tombol Detail diklik, gambar kupu-kupu akan muncul di modal dan tampilannya diatur oleh CSS ini.*/
+.modal-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  max-height: 220px;
+}
+
+/*Class .modal-title digunakan untuk mengatur tampilan judul yang muncul di dalam modal.*/
+.modal-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: var(--blue-deep);
+  margin-bottom: 10px;
+}
+/*class ini di gunakan untuk mengatur deskripsi yang ada di bawah judul*/
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4a6280;
+}
+
+/* ── RESPONSIVE ── */
+
+/*Kode ini digunakan untuk membuat website responsive, yaitu tampilan website dapat menyesuaikan ukuran layar perangkat seperti laptop, tablet, dan HP.*/
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .butterfly-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .habitat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    padding: 0 24px;
+  }
+
+  .butterfly-section,
+  #features {
+    padding: 60px 24px;
+  }
+}
+/*Kode ini digunakan untuk membuat tampilan navbar Bootstrap menjadi lebih rapi saat layar kecil (tablet/HP).*/
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*animasi delay saat memunculkan card*/
+.fade-up {
+  animation: fadeUp 0.7s;
+}
+
+.contact-person {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--blue-dark);
+  max-width: 780px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px; /* jarak ke bawah */
+}
+
+.instagram-text {
+  display: inline-block; /*tetap seperti teks biasa (inline) tapi bisa diberi padding, ukuran, dan bentuk seperti kotak*/
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(
+    45deg,
+    #8a3ab9,
+    #bc2a8d,
+    #e1306c,
+    #f77737,
+    #fcaf45
+  );
+
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+}
